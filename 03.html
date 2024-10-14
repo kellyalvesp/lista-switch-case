@@ -1,0 +1,57 @@
+<script>
+    /*PROBLEMA: OPERAÇÃO MATEMÁTICA
+   Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
+   - par ou ímpar;
+   - positivo ou negativo;
+   - inteiro ou decimal.
+   */
+
+    // ENTRADA 
+    const primNumero = Number(prompt(`Informe um número:`).replace(",", "."));
+    const segNumero = Number(prompt(`Informe um segundo número:`).replace(",", "."));
+    const operacao = prompt(`Informe a operação que deseja realizar (+, -, * ou /):`);
+
+    // PROCESSAMENTO E SAÍDA SWITCH CASE
+    let resultado;
+    let frase = "";
+    switch (operacao) {
+        case "+":
+            resultado = primNumero + segNumero;
+            document.write(`A soma dos números é ${resultado.toFixed(2).replace(".", ",")}.`);
+            break;
+        case "-":
+            resultado = primNumero - segNumero;
+            document.write(`A subtração dos números é ${resultado.toFixed(2).replace(".", ",")}.`);
+            break;
+        case "*":
+            resultado = primNumero * segNumero;
+            document.write(`A multiplicação dos números é ${resultado.toFixed(2).replace(".", ",")}.`);
+            break;
+        case "/":
+            resultado = primNumero / segNumero;
+            document.write(`A divisão dos número é ${resultado.toFixed(2).replace(".", ",")}.`);
+            break;
+        default:
+            frase = "Operação Inválida!";
+            break;
+    }
+
+    // PROCESSAMENTO E SAÍDA IF ELSE
+    if (resultado % 2 == 0) {
+        document.write(`Esse número é par, `);
+    } else {
+        document.write(`Esse número é ímpar, `);
+    }
+
+    if (resultado > 0) {
+        document.write(`positivo e `);
+    } else {
+        document(`negativo e `);
+    }
+
+    if (resultado % 1 == 0) {
+        document.write(`inteiro.`);
+    } else {
+        document.write(`decimal.`);
+    }
+</script>
